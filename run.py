@@ -2,6 +2,7 @@
 # You can delete these comments, but do not change the name of this file
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import os
+import random
 import gspread
 from google.oauth2.service_account import Credentials
 
@@ -68,6 +69,9 @@ def clear():
 
 
 def play_pontoon():
+    """
+    Provides main structure for the game
+    """
     game_number = 1
 
     while True:
@@ -92,10 +96,49 @@ def play_pontoon():
                 break
             else:
                 raise ValueError()
-        
+
         except ValueError:
             print(f"{choice} is not valid, please try again.")
             input("Press 'Enter' to return to the game.")
 
 
-main_manu()
+class PackOfCards:
+    """
+    Pack of cards class
+    """
+    def __init__(self):
+        self.size = 52
+        self.pack = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4,
+                     5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8,
+                     9, 9, 9, 9, 10, 10, 10, 10, 11, 11, 11, 11,
+                     12, 12, 12, 12, 13, 13, 13, 13]
+
+    def random_card(self):
+        """
+        Returns a random card value from the pack
+        """
+        rand = random.randrange(self.size)
+        card = self.pack[rand]
+        self.size -= 1
+        self.pack[rand] = self.pack[self.size - 1]
+        return card
+
+    def reset_pack(self):
+        """
+        Resets the attributes of the pack
+        """
+        self.size = 52
+        self.pack = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4,
+                     5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8,
+                     9, 9, 9, 9, 10, 10, 10, 10, 11, 11, 11, 11,
+                     12, 12, 12, 12, 13, 13, 13, 13]
+
+
+# main_manu()
+newpack = PackOfCards()
+print(newpack.random_card())
+print(newpack.size)
+print(newpack.random_card())
+print(newpack.size)
+print(newpack.random_card())
+print(newpack.size)
