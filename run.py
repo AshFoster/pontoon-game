@@ -75,13 +75,13 @@ def play_pontoon():
     game_number = 1
     pack = PackOfCards()
     hand = Hand(pack)
-    hand.add_card()
 
     while True:
         try:
             clear()
             print(f"Game {game_number} of 5\n")
-            print(f"You have been dealt the following hand:{hand.show_hand()}")
+            print(f"Your hand is:{hand.show_hand()}")
+            print(f"\nCurrent value: {hand.get_value()}")
             print("\nAnother card:    1")
             print("Stick:           2\n")
             print("Quit:            0\n")
@@ -89,8 +89,7 @@ def play_pontoon():
                            "numbers shown: ")
 
             if int(choice) == 1:
-                print("Another Card")
-                break
+                hand.add_card()
             elif int(choice) == 2:
                 print("Stick")
                 break
@@ -144,6 +143,7 @@ class Hand:
     def __init__(self, pack=PackOfCards()):
         self.pack = pack
         self.hand = [pack.random_card(), pack.random_card()]
+        self.picture_cards = {1: "Ace", 11: "Jack", 12: "Queen", 13: "King"}
 
     def show_hand(self):
         """
@@ -151,7 +151,10 @@ class Hand:
         """
         display = ""
         for card in self.hand:
-            display = display + "    " + str(card)
+            if card == 1 or card > 10:
+                display = display + "    " + self.picture_cards[card]
+            else:
+                display = display + "    " + str(card)
 
         return display
 
@@ -160,6 +163,16 @@ class Hand:
         Adds a card to the player's hand
         """
         self.hand.append(self.pack.random_card())
+
+    def get_value(self):
+        """
+        Returns the current value of the player's hand
+        """
+        value = 0
+        for card in self.hand:
+            value = value + card
+
+        return value
 
 
 # main_manu()
