@@ -38,8 +38,7 @@ def main_manu():
                                 "numbers shown: ")
 
             if int(menu_choice) == 1:
-                # play_pontoon()
-                print("Play Pontoon")
+                play_pontoon()
                 break
             elif int(menu_choice) == 2:
                 # rules()
@@ -57,7 +56,7 @@ def main_manu():
 
         except ValueError:
             print(f"{menu_choice} is not valid, please try again.")
-            input("Press 'Enter' to return to the main menu.")
+            input("Press 'Enter' to return to the game.")
             clear()
 
 
@@ -66,6 +65,37 @@ def clear():
     Clears the terminal
     """
     os.system('cls' if os.name == 'nt' else 'clear')
+
+
+def play_pontoon():
+    game_number = 1
+
+    while True:
+        try:
+            clear()
+            print(f"Game {game_number} of 5\n")
+            print("You have been dealt the following hand:  Queen    King")
+            print("\nAnother card:    1")
+            print("Stick:           2\n")
+            print("Quit:            0\n")
+            choice = input("Please enter your choice using the "
+                           "numbers shown: ")
+
+            if int(choice) == 1:
+                print("Another Card")
+                break
+            elif int(choice) == 2:
+                print("Stick")
+                break
+            elif int(choice) == 0:
+                print("You have quit the game, Goodbye.")
+                break
+            else:
+                raise ValueError()
+        
+        except ValueError:
+            print(f"{choice} is not valid, please try again.")
+            input("Press 'Enter' to return to the game.")
 
 
 main_manu()
