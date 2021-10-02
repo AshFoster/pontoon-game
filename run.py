@@ -73,12 +73,15 @@ def play_pontoon():
     Provides main structure for the game
     """
     game_number = 1
+    pack = PackOfCards()
+    hand = Hand(pack)
+    hand.add_card()
 
     while True:
         try:
             clear()
             print(f"Game {game_number} of 5\n")
-            print("You have been dealt the following hand:  Queen    King")
+            print(f"You have been dealt the following hand:{hand.show_hand()}")
             print("\nAnother card:    1")
             print("Stick:           2\n")
             print("Quit:            0\n")
@@ -120,7 +123,7 @@ class PackOfCards:
         rand = random.randrange(self.size)
         card = self.pack[rand]
         self.size -= 1
-        self.pack[rand] = self.pack[self.size - 1]
+        self.pack[rand] = self.pack[self.size]
         return card
 
     def reset_pack(self):
@@ -134,11 +137,37 @@ class PackOfCards:
                      12, 12, 12, 12, 13, 13, 13, 13]
 
 
+class Hand:
+    """
+    Player's hand class
+    """
+    def __init__(self, pack=PackOfCards()):
+        self.pack = pack
+        self.hand = [pack.random_card(), pack.random_card()]
+
+    def show_hand(self):
+        """
+        Returns a string containing the player's hand
+        """
+        display = ""
+        for card in self.hand:
+            display = display + "    " + str(card)
+
+        return display
+
+    def add_card(self):
+        """
+        Adds a card to the player's hand
+        """
+        self.hand.append(self.pack.random_card())
+
+
 # main_manu()
-newpack = PackOfCards()
-print(newpack.random_card())
-print(newpack.size)
-print(newpack.random_card())
-print(newpack.size)
-print(newpack.random_card())
-print(newpack.size)
+play_pontoon()
+# newpack = PackOfCards()
+# print(newpack.random_card())
+# print(newpack.size)
+# print(newpack.random_card())
+# print(newpack.size)
+# print(newpack.random_card())
+# print(newpack.size)
