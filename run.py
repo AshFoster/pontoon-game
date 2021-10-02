@@ -58,7 +58,14 @@ def main_manu():
         except ValueError:
             print(f"{menu_choice} is not valid, please try again.")
             input("Press 'Enter' to return to the main menu.")
-            os.system('cls' if os.name == 'nt' else 'clear')
+            clear()
+
+
+def clear():
+    """
+    Clears the terminal
+    """
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 main_manu()
