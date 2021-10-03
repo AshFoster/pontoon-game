@@ -169,28 +169,20 @@ class Hand:
         Returns the current value of the player's hand
         """
         value = 0
-        value2 = 0
-        multiple_aces = False
+        aces = 0
         for card in self.hand:
             if card > 10:
                 value = value + 10
-                value2 = value2 + 10
             elif card == 1:
-                if not multiple_aces:
-                    value = value + 11
-                    value2 = value2 + 1
-                    multiple_aces = True
-                else:
-                    value = value + 1
-                    value2 = value2 + 1
+                value = value + 1
+                aces += 1
             else:
                 value = value + card
-                value2 = value2 + card
 
-        if value <= 21:
-            return value
+        if aces > 0 and value + 10 <= 21:
+            return value + 10
         else:
-            return value2
+            return value
 
 
 # main_manu()
