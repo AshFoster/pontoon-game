@@ -167,35 +167,63 @@ class Pontoon:
         while self.round_number < 5:
             self.round_number = self.round_number + 1
             hand = Hand()
-
+            round_end = False
+            bust = False
             while True:
                 try:
                     clear()
                     print(f"Round {self.round_number} of 5\n")
                     print(f"Your hand is:{hand.show_hand()}\n")
 
-                    print(f"Current value: {hand.get_value()}\n")
-                    print("Another card:    1")
-                    print("Stick:           2\n")
-                    print("Quit:            0\n")
-                    choice = input("Please enter your choice using the "
-                                   "numbers shown: ")
+                    if not round_end:
+                        print(f"Current value: {hand.get_value()}\n")
+                        print("Another card:    1")
+                        print("Stick:           2\n")
+                        print("Quit:            0\n")
+                        choice = input("Please enter your choice using the "
+                                       "numbers shown: ")
 
-                    if int(choice) == 1:
-                        hand.add_card()
-                    elif int(choice) == 2:
-                        print("stick")
-                        input("Press 'Enter' to return to the game.")
-                        break
-                    elif int(choice) == 0:
-                        print("You have quit the game, Goodbye.")
-                        break
+                        if int(choice) == 1:
+                            hand.add_card()
+                            if hand.get_value() > 21:
+                                round_end = True
+                                bust = True
+                        elif int(choice) == 2:
+                            round_end = True
+                        elif int(choice) == 0:
+                            print("You have quit the game, Goodbye.")
+                            break
+                        else:
+                            raise ValueError()
                     else:
-                        raise ValueError()
+                        self.end_round(bust, hand.get_value(), hand.get_size())
+                        break
 
                 except ValueError:
                     print(f"{choice} is not valid, please try again.")
                     input("Press 'Enter' to return to the game.")
+
+    def end_round(self, bust, value, size):
+        if bust:
+            print(f"You've bust with a score of {value}.")
+            print("That's -100 points...")
+            self.round_score = self.round_score - 100
+        elif size == 2 and value == 21:
+            print(f"You've got a pontoon with a score of {value}.")
+            print("That's +100 points! Well done!")
+            self.round_score = self.round_score + 100
+        elif size == 5:
+            print(f"You've got a five card trick with a score of {value}.")
+            print("That's +50 points! Nice one!")
+            self.round_score = self.round_score + 50
+        else:
+            print(f"You've got a score of {value}.")
+            print(f"That's an extra {value} points for you.")
+            self.round_score = self.round_score + value
+
+        print(f"\nAt the end of round {self.round_number}"
+              f" your total score is {self.round_score}.")
+        input("Press 'Enter' to return to the game.")
 
 
 # main_manu()
