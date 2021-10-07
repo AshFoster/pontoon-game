@@ -217,13 +217,19 @@ class Pontoon:
             print("That's +50 points! Nice one!")
             self.round_score = self.round_score + 50
         else:
-            print(f"You've got a score of {value}.")
-            print(f"That's an extra {value} points for you.")
+            print(f"You got a score of {value}.")
+            print(f"That's {value} points added to your total.")
             self.round_score = self.round_score + value
 
-        print(f"\nAt the end of round {self.round_number}"
-              f" your total score is {self.round_score}.")
-        input("Press 'Enter' to return to the game.")
+        if self.round_number == 5:
+            print(f"\nThat's all 5 rounds complete! "
+                  f"Your total score is {self.round_score}.")
+            input("Press 'Enter' to continue.")
+        else:
+            print(f"\nAt the end of round {self.round_number}"
+                  f" your total score is {self.round_score}.")
+            input(f"Press 'Enter' to continue to round "
+                  f"{self.round_number + 1}.")
 
 
 # main_manu()
