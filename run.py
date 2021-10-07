@@ -191,6 +191,7 @@ class Pontoon:
                         elif int(choice) == 2:
                             round_end = True
                         elif int(choice) == 0:
+                            quit = True
                             print("You have quit the game, Goodbye.")
                             break
                         else:
@@ -202,6 +203,9 @@ class Pontoon:
                 except ValueError:
                     print(f"{choice} is not valid, please try again.")
                     input("Press 'Enter' to return to the game.")
+
+            if quit:
+                break
 
     def end_round(self, bust, value, size):
         if bust:
