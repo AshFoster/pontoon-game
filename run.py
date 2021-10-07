@@ -39,8 +39,8 @@ def main_manu():
                                 "numbers shown: ")
 
             if int(menu_choice) == 1:
-                pontoon = Pontoon()
-                pontoon.play()
+                play_pontoon()
+                break
             elif int(menu_choice) == 2:
                 # rules()
                 print("Rules")
@@ -189,6 +189,8 @@ class Pontoon:
                             if hand.get_value() > 21:
                                 round_end = True
                                 bust = True
+                            elif hand.get_size() == 5:
+                                round_end = True
                         elif int(choice) == 2:
                             round_end = True
                         elif int(choice) == 0:
@@ -238,6 +240,6 @@ class Pontoon:
                   f"{self.round_number + 1}.")
 
 
-main_manu()
-# pontoon = Pontoon()
-# pontoon.play()
+# main_manu()
+pontoon = Pontoon()
+pontoon.play()
