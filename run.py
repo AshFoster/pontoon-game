@@ -39,8 +39,8 @@ def main_manu():
                                 "numbers shown: ")
 
             if int(menu_choice) == 1:
-                play_pontoon()
-                break
+                pontoon = Pontoon()
+                pontoon.play()
             elif int(menu_choice) == 2:
                 # rules()
                 print("Rules")
@@ -169,6 +169,7 @@ class Pontoon:
             hand = Hand()
             round_end = False
             bust = False
+            quit = False
             while True:
                 try:
                     clear()
@@ -229,6 +230,7 @@ class Pontoon:
             print(f"\nThat's all 5 rounds complete! "
                   f"Your total score is {self.round_score}.")
             input("Press 'Enter' to continue.")
+            clear()
         else:
             print(f"\nAt the end of round {self.round_number}"
                   f" your total score is {self.round_score}.")
@@ -236,6 +238,6 @@ class Pontoon:
                   f"{self.round_number + 1}.")
 
 
-# main_manu()
-pontoon = Pontoon()
-pontoon.play()
+main_manu()
+# pontoon = Pontoon()
+# pontoon.play()
