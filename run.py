@@ -160,36 +160,42 @@ class Pontoon:
     Pontoon Class
     """
     def __init__(self):
-        self.round_number = 1
+        self.round_number = 0
+        self.round_score = 0
 
     def play(self):
-        hand = Hand()
-        while True:
-            try:
-                clear()
-                print(f"Round {self.round_number} of 5\n")
-                print(f"Your hand is:{hand.show_hand()}\n")
-                print(f"Current value: {hand.get_value()}\n")
-                print("Another card:    1")
-                print("Stick:           2\n")
-                print("Quit:            0\n")
-                choice = input("Please enter your choice using the "
-                               "numbers shown: ")
+        while self.round_number < 5:
+            self.round_number = self.round_number + 1
+            hand = Hand()
 
-                if int(choice) == 1:
-                    hand.add_card()
-                elif int(choice) == 2:
-                    print("Stick")
-                    break
-                elif int(choice) == 0:
-                    print("You have quit the game, Goodbye.")
-                    break
-                else:
-                    raise ValueError()
+            while True:
+                try:
+                    clear()
+                    print(f"Round {self.round_number} of 5\n")
+                    print(f"Your hand is:{hand.show_hand()}\n")
 
-            except ValueError:
-                print(f"{choice} is not valid, please try again.")
-                input("Press 'Enter' to return to the game.")
+                    print(f"Current value: {hand.get_value()}\n")
+                    print("Another card:    1")
+                    print("Stick:           2\n")
+                    print("Quit:            0\n")
+                    choice = input("Please enter your choice using the "
+                                   "numbers shown: ")
+
+                    if int(choice) == 1:
+                        hand.add_card()
+                    elif int(choice) == 2:
+                        print("stick")
+                        input("Press 'Enter' to return to the game.")
+                        break
+                    elif int(choice) == 0:
+                        print("You have quit the game, Goodbye.")
+                        break
+                    else:
+                        raise ValueError()
+
+                except ValueError:
+                    print(f"{choice} is not valid, please try again.")
+                    input("Press 'Enter' to return to the game.")
 
 
 # main_manu()
