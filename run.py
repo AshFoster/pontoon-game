@@ -68,42 +68,6 @@ def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-def play_pontoon():
-    """
-    Provides main structure for the game
-    """
-    game_number = 1
-    pack = PackOfCards()
-    hand = Hand(pack)
-
-    while True:
-        try:
-            clear()
-            print(f"Game {game_number} of 5\n")
-            print(f"Your hand is:{hand.show_hand()}")
-            print(f"\nCurrent value: {hand.get_value()}")
-            print("\nAnother card:    1")
-            print("Stick:           2\n")
-            print("Quit:            0\n")
-            choice = input("Please enter your choice using the "
-                           "numbers shown: ")
-
-            if int(choice) == 1:
-                hand.add_card()
-            elif int(choice) == 2:
-                print("Stick")
-                break
-            elif int(choice) == 0:
-                print("You have quit the game, Goodbye.")
-                break
-            else:
-                raise ValueError()
-
-        except ValueError:
-            print(f"{choice} is not valid, please try again.")
-            input("Press 'Enter' to return to the game.")
-
-
 class PackOfCards:
     """
     Pack of cards class
@@ -140,9 +104,9 @@ class Hand:
     """
     Player's hand class
     """
-    def __init__(self, pack=PackOfCards()):
-        self.pack = pack
-        self.hand = [pack.random_card(), pack.random_card()]
+    def __init__(self):
+        self.pack = PackOfCards()
+        self.hand = [self.pack.random_card(), self.pack.random_card()]
         self.picture_cards = {1: "Ace", 11: "Jack", 12: "Queen", 13: "King"}
 
     def show_hand(self):
@@ -184,13 +148,50 @@ class Hand:
         else:
             return value
 
+    def get_size(self):
+        """
+        Returns the current size of the player's hand
+        """
+        return len(self.hand)
+
+
+class Pontoon:
+    """
+    Pontoon Class
+    """
+    def __init__(self):
+        self.round_number = 1
+
+    def play(self):
+        hand = Hand()
+        while True:
+            try:
+                clear()
+                print(f"Round {self.round_number} of 5\n")
+                print(f"Your hand is:{hand.show_hand()}\n")
+                print(f"Current value: {hand.get_value()}\n")
+                print("Another card:    1")
+                print("Stick:           2\n")
+                print("Quit:            0\n")
+                choice = input("Please enter your choice using the "
+                               "numbers shown: ")
+
+                if int(choice) == 1:
+                    hand.add_card()
+                elif int(choice) == 2:
+                    print("Stick")
+                    break
+                elif int(choice) == 0:
+                    print("You have quit the game, Goodbye.")
+                    break
+                else:
+                    raise ValueError()
+
+            except ValueError:
+                print(f"{choice} is not valid, please try again.")
+                input("Press 'Enter' to return to the game.")
+
 
 # main_manu()
-play_pontoon()
-# newpack = PackOfCards()
-# print(newpack.random_card())
-# print(newpack.size)
-# print(newpack.random_card())
-# print(newpack.size)
-# print(newpack.random_card())
-# print(newpack.size)
+pontoon = Pontoon()
+pontoon.play()
