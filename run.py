@@ -251,8 +251,7 @@ class Pontoon:
             print(f"\nThat's all 5 rounds complete! "
                   f"Your total score is {self.round_score}.\n")
             self.rounds["Total"] = self.round_score
-            print(self.rounds)
-            input("Press 'Enter' to continue.")
+            self.update_leaderboard()
             clear()
         else:
             print(f"\nAt the end of round {self.round_number}"
@@ -277,7 +276,14 @@ class Pontoon:
                 print("A maximum of 10 characters is allowed.")
                 input("Press 'Enter' to try again.")
 
+    def update_leaderboard(self):
+        worksheet = SHEET.worksheet("scores")
+        worksheet.append_row(list(self.rounds.values()))
+        print("Your score has been added to the leaderboard!\n")
+        input("Press 'Enter' to continue.")
+
 
 main_manu()
 # pontoon = Pontoon()
+# pontoon.update_leaderboard()
 # pontoon.play()
