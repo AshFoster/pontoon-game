@@ -25,6 +25,7 @@ def main_manu():
     """
     print("Welcome! You've managed to stumble upon this terminal based")
     print("version of the classic card game Pontoon.\n")
+    pontoon = Pontoon()
 
     while True:
         try:
@@ -37,7 +38,6 @@ def main_manu():
             print("Quit:            0\n")
             menu_choice = input("Please enter your choice using the "
                                 "numbers shown: ")
-            pontoon = Pontoon()
 
             if int(menu_choice) == 1:
                 pontoon.play()
@@ -212,7 +212,7 @@ class Pontoon:
     """
     PONTOON_SCORE = 100
     FIVE_TRICK = 50
-    BUST_SCORE = -100
+    BUST_SCORE = -50
 
     def __init__(self):
         self.round_number = 0
@@ -229,6 +229,7 @@ class Pontoon:
 
     def play(self):
         self.request_name()
+        self.round_number = 0
         self.round_score = 0
         while self.round_number < 5:
             self.round_number = self.round_number + 1
