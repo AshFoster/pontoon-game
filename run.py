@@ -42,9 +42,7 @@ def main_manu():
                 pontoon = Pontoon()
                 pontoon.play()
             elif int(menu_choice) == 2:
-                # rules()
-                print("Rules")
-                break
+                show_rules()
             elif int(menu_choice) == 3:
                 show_leaderboard()
             elif int(menu_choice) == 0:
@@ -64,6 +62,33 @@ def clear():
     Clears the terminal
     """
     os.system('cls' if os.name == 'nt' else 'clear')
+
+
+def show_rules():
+    clear()
+    print("-----")
+    print("RULES")
+    print("-----")
+    print("- The game starts with the player being dealt 2 random cards.")
+    print("- These could be any 2 cards from a standard pack of cards.")
+    print("- Card suits are not needed for this game so are not shown.")
+    print("- Cards numbered 2 to 10 hold that specific value.")
+    print("- Aces can have a value of 1 or 11. The optimum value used.")
+    print("- Jack, Queen and King cards all have a value of 10.")
+    print("- The player can request more cards, one-at-a-time, up to a")
+    print("  total of 5.")
+    print("- The aim is to get as close as possible to a score of 21")
+    print("  without going higher.")
+    print("- The hand is considered bust if higher than 21 which results")
+    print("  in a round score of -100 points.")
+    print("- If a score of 21 is achieved with the first 2 cards that's")
+    print("  a Pontoon, worth 100 points!")
+    print("- If 5 cards are held with a total value of 21 or less that's")
+    print("  a five card trick, worth 50 points!")
+    print("- A game consists of 5 rounds with an aim of getting as many")
+    print("  points as possible over the 5 rounds.")
+    input("\nPress 'Enter' to return to the Main Menu.")
+    clear()
 
 
 def show_leaderboard():
