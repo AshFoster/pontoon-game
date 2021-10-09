@@ -24,11 +24,11 @@ def main_manu():
     choose from: Play Game, See Rules, See High Scores.
     """
     print("Welcome! You've managed to stumble upon this terminal based")
-    print("version of the classic card game Pontoon.")
+    print("version of the classic card game Pontoon.\n")
 
     while True:
         try:
-            print("\n---------")
+            print("---------")
             print("MAIN MENU")
             print("---------\n")
             print("Play Pontoon:    1")
@@ -39,8 +39,8 @@ def main_manu():
                                 "numbers shown: ")
 
             if int(menu_choice) == 1:
-                play_pontoon()
-                break
+                pontoon = Pontoon()
+                pontoon.play()
             elif int(menu_choice) == 2:
                 # rules()
                 print("Rules")
@@ -104,8 +104,8 @@ class Hand:
     """
     Player's hand class
     """
-    def __init__(self):
-        self.pack = PackOfCards()
+    def __init__(self, pack=PackOfCards()):
+        self.pack = pack
         self.hand = [self.pack.random_card(), self.pack.random_card()]
         self.picture_cards = {1: "Ace", 11: "Jack", 12: "Queen", 13: "King"}
 
@@ -212,34 +212,34 @@ class Pontoon:
 
     def end_round(self, bust, value, size):
         if bust:
-            print(f"You've bust with a score of {value}.")
-            print("That's -100 points...")
+            print(f"You've bust with a score of {value}. "
+                  "That's -100 points...")
             self.round_score = self.round_score - 100
         elif size == 2 and value == 21:
-            print(f"You've got a pontoon with a score of {value}.")
-            print("That's +100 points! Well done!")
+            print(f"You've got a pontoon with a score of {value}. "
+                  "That's +100 points! Well done!")
             self.round_score = self.round_score + 100
         elif size == 5:
-            print(f"You've got a five card trick with a score of {value}.")
-            print("That's +50 points! Nice one!")
+            print(f"You've got a five card trick with a score of {value}. "
+                  "That's +50 points! Nice one!")
             self.round_score = self.round_score + 50
         else:
-            print(f"You got a score of {value}.")
-            print(f"That's {value} points added to your total.")
+            print(f"You got a score of {value}. "
+                  f"That's {value} points added to your total.")
             self.round_score = self.round_score + value
 
         if self.round_number == 5:
             print(f"\nThat's all 5 rounds complete! "
-                  f"Your total score is {self.round_score}.")
+                  f"Your total score is {self.round_score}.\n")
             input("Press 'Enter' to continue.")
             clear()
         else:
             print(f"\nAt the end of round {self.round_number}"
-                  f" your total score is {self.round_score}.")
+                  f" your total score is {self.round_score}.\n")
             input(f"Press 'Enter' to continue to round "
                   f"{self.round_number + 1}.")
 
 
-# main_manu()
-pontoon = Pontoon()
-pontoon.play()
+main_manu()
+# pontoon = Pontoon()
+# pontoon.play()
