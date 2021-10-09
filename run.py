@@ -229,7 +229,7 @@ class Pontoon:
         if bust:
             print(f"You've bust with a score of {value}. "
                   f"That's {self.BUST_SCORE} points...")
-            self.round_score = self.round_score - self.BUST_SCORE
+            self.round_score = self.round_score + self.BUST_SCORE
             self.rounds[self.round_number] = self.BUST_SCORE
         elif size == 2 and value == 21:
             print(f"You've got a pontoon with a score of {value}. "
