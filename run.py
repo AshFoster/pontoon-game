@@ -178,9 +178,9 @@ class Pontoon:
 
     def play(self):
         self.request_name()
+        self.round_score = 0
         while self.round_number < 5:
             self.round_number = self.round_number + 1
-            self.round_score = 0
             hand = Hand()
             round_end = False
             bust = False
