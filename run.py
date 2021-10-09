@@ -162,6 +162,14 @@ class Pontoon:
     def __init__(self):
         self.round_number = 0
         self.round_score = 0
+        self.rounds = {
+            1: 0,
+            2: 0,
+            3: 0,
+            4: 0,
+            5: 0,
+            "Total": 0
+        }
 
     def play(self):
         while self.round_number < 5:
@@ -215,22 +223,27 @@ class Pontoon:
             print(f"You've bust with a score of {value}. "
                   "That's -100 points...")
             self.round_score = self.round_score - 100
+            self.rounds[self.round_number] = -100
         elif size == 2 and value == 21:
             print(f"You've got a pontoon with a score of {value}. "
                   "That's +100 points! Well done!")
             self.round_score = self.round_score + 100
+            self.rounds[self.round_number] = 100
         elif size == 5:
             print(f"You've got a five card trick with a score of {value}. "
                   "That's +50 points! Nice one!")
             self.round_score = self.round_score + 50
+            self.rounds[self.round_number] = 50
         else:
             print(f"You got a score of {value}. "
                   f"That's {value} points added to your total.")
             self.round_score = self.round_score + value
+            self.rounds[self.round_number] = value
 
         if self.round_number == 5:
             print(f"\nThat's all 5 rounds complete! "
                   f"Your total score is {self.round_score}.\n")
+            self.rounds["Total"] = self.round_score
             input("Press 'Enter' to continue.")
             clear()
         else:
