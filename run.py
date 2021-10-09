@@ -33,7 +33,7 @@ def main_manu():
             print("---------\n")
             print("Play Pontoon:    1")
             print("Rules:           2")
-            print("High Scores:     3\n")
+            print("Leaderboard:     3\n")
             print("Quit:            0\n")
             menu_choice = input("Please enter your choice using the "
                                 "numbers shown: ")
@@ -46,9 +46,7 @@ def main_manu():
                 print("Rules")
                 break
             elif int(menu_choice) == 3:
-                # high_scores()
-                print("High Scores")
-                break
+                show_leaderboard()
             elif int(menu_choice) == 0:
                 print("You have quit the game, Goodbye.")
                 break
@@ -66,6 +64,33 @@ def clear():
     Clears the terminal
     """
     os.system('cls' if os.name == 'nt' else 'clear')
+
+
+def show_leaderboard():
+    clear()
+    worksheet = SHEET.worksheet("scores")
+    worksheet.sort((2, 'des'))
+
+    scores = []
+    leaderboard_size = 0
+    for ind in range(1, 3):
+        column = worksheet.col_values(ind)
+        scores.append(column)
+
+    if len(scores[0]) < 10:
+        leaderboard_size = len(scores[0])
+    else:
+        leaderboard_size = 10
+
+    print("-----------")
+    print("LEADERBOARD")
+    print("-----------\n")
+
+    for ind in range(1, leaderboard_size):
+        print(f"{str(ind)+'.':<6}{scores[0][ind]:<12}{scores[1][ind]:>4}")
+
+    input("\nPress 'Enter' to return to the Main Menu.")
+    clear()
 
 
 class PackOfCards:
@@ -285,6 +310,7 @@ class Pontoon:
 
 
 main_manu()
+# show_leaderboard()
 # pontoon = Pontoon()
 # pontoon.update_leaderboard()
 # pontoon.play()
