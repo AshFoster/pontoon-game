@@ -159,6 +159,10 @@ class Pontoon:
     """
     Pontoon Class
     """
+    PONTOON_SCORE = 100
+    FIVE_TRICK = 50
+    BUST_SCORE = -100
+
     def __init__(self):
         self.round_number = 0
         self.round_score = 0
@@ -221,19 +225,19 @@ class Pontoon:
     def end_round(self, bust, value, size):
         if bust:
             print(f"You've bust with a score of {value}. "
-                  "That's -100 points...")
-            self.round_score = self.round_score - 100
-            self.rounds[self.round_number] = -100
+                  f"That's {self.BUST_SCORE} points...")
+            self.round_score = self.round_score - self.BUST_SCORE
+            self.rounds[self.round_number] = self.BUST_SCORE
         elif size == 2 and value == 21:
             print(f"You've got a pontoon with a score of {value}. "
-                  "That's +100 points! Well done!")
-            self.round_score = self.round_score + 100
-            self.rounds[self.round_number] = 100
+                  f"That's +{self.PONTOON_SCORE} points! Well done!")
+            self.round_score = self.round_score + self.PONTOON_SCORE
+            self.rounds[self.round_number] = self.PONTOON_SCORE
         elif size == 5:
             print(f"You've got a five card trick with a score of {value}. "
-                  "That's +50 points! Nice one!")
-            self.round_score = self.round_score + 50
-            self.rounds[self.round_number] = 50
+                  f"That's +{self.FIVE_TRICK} points! Nice one!")
+            self.round_score = self.round_score + self.FIVE_TRICK
+            self.rounds[self.round_number] = self.FIVE_TRICK
         else:
             print(f"You got a score of {value}. "
                   f"That's {value} points added to your total.")
