@@ -86,7 +86,7 @@ def show_leaderboard():
     print("LEADERBOARD")
     print("-----------\n")
 
-    for ind in range(1, leaderboard_size):
+    for ind in range(1, leaderboard_size + 1):
         print(f"{str(ind)+'.':<6}{scores[0][ind]:<12}{scores[1][ind]:>4}")
 
     input("\nPress 'Enter' to return to the Main Menu.")
