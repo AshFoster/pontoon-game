@@ -37,12 +37,13 @@ def main_manu():
             print("Quit:            0\n")
             menu_choice = input("Please enter your choice using the "
                                 "numbers shown: ")
+            pontoon = Pontoon()
 
             if int(menu_choice) == 1:
-                pontoon = Pontoon()
                 pontoon.play()
             elif int(menu_choice) == 2:
-                show_rules()
+                show_rules(pontoon.BUST_SCORE, pontoon.PONTOON_SCORE,
+                           pontoon.FIVE_TRICK)
             elif int(menu_choice) == 3:
                 show_leaderboard()
             elif int(menu_choice) == 0:
@@ -64,7 +65,7 @@ def clear():
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
-def show_rules():
+def show_rules(bust, pontoon, five):
     clear()
     print("-----")
     print("RULES")
@@ -80,11 +81,11 @@ def show_rules():
     print("- The aim is to get as close as possible to a score of 21")
     print("  without going higher.")
     print("- The hand is considered bust if higher than 21 which results")
-    print("  in a round score of -100 points.")
+    print(f"  in a round score of {bust} points.")
     print("- If a score of 21 is achieved with the first 2 cards that's")
-    print("  a Pontoon, worth 100 points!")
+    print(f"  a Pontoon, worth {pontoon} points!")
     print("- If 5 cards are held with a total value of 21 or less that's")
-    print("  a five card trick, worth 50 points!")
+    print(f"  a five card trick, worth {five} points!")
     print("- A game consists of 5 rounds with an aim of getting as many")
     print("  points as possible over the 5 rounds.")
     input("\nPress 'Enter' to return to the Main Menu.")
