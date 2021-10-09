@@ -279,6 +279,7 @@ class Pontoon:
     def update_leaderboard(self):
         worksheet = SHEET.worksheet("scores")
         worksheet.append_row(list(self.rounds.values()))
+        worksheet.sort((2, 'des'))
         print("Your score has been added to the leaderboard!\n")
         input("Press 'Enter' to continue.")
 
