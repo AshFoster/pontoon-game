@@ -167,15 +167,17 @@ class Pontoon:
         self.round_number = 0
         self.round_score = 0
         self.rounds = {
+            "Name": "",
+            "Total": 0,
             1: 0,
             2: 0,
             3: 0,
             4: 0,
-            5: 0,
-            "Total": 0
+            5: 0
         }
 
     def play(self):
+        self.request_name()
         while self.round_number < 5:
             self.round_number = self.round_number + 1
             hand = Hand()
@@ -255,6 +257,23 @@ class Pontoon:
                   f" your total score is {self.round_score}.\n")
             input(f"Press 'Enter' to continue to round "
                   f"{self.round_number + 1}.")
+
+    def request_name(self):
+        while True:
+            try:
+                clear()
+                print("You've chosen to play Pontoon!\n")
+                name = input("Please tell us your name: ")
+                if len(name) <= 10:
+                    self.rounds["Name"] = name
+                    break
+                else:
+                    raise ValueError()
+
+            except ValueError:
+                print("That has too many characters!")
+                print("A maximum of 10 characters is allowed.")
+                input("Press 'Enter' to try again.")
 
 
 main_manu()
