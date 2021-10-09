@@ -180,6 +180,7 @@ class Pontoon:
         self.request_name()
         while self.round_number < 5:
             self.round_number = self.round_number + 1
+            self.round_score = 0
             hand = Hand()
             round_end = False
             bust = False
@@ -250,6 +251,7 @@ class Pontoon:
             print(f"\nThat's all 5 rounds complete! "
                   f"Your total score is {self.round_score}.\n")
             self.rounds["Total"] = self.round_score
+            print(self.rounds)
             input("Press 'Enter' to continue.")
             clear()
         else:
