@@ -106,6 +106,7 @@ def show_leaderboard():
     up to a maximum of the top 10.
     """
     clear()
+    print("LOADING...")
     worksheet = SHEET.worksheet("scores")
     worksheet.sort((2, 'des'))
 
@@ -120,6 +121,7 @@ def show_leaderboard():
     else:
         leaderboard_size = 10
 
+    clear()
     print("-----------")
     print("LEADERBOARD")
     print("-----------\n")
