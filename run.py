@@ -1,11 +1,11 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
 import os
 import random
 import gspread
 from google.oauth2.service_account import Credentials
 
+# CREDIT-------------
+# This section of code - used to access google sheets - was taken from
+# the code insitue's Love Sandwiches walkthrough project.
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -16,12 +16,13 @@ CREDS = Credentials.from_service_account_file('creds.json')
 SCOPED_CREDS = CREDS.with_scopes(SCOPE)
 GSPREAD_CLIENT = gspread.authorize(SCOPED_CREDS)
 SHEET = GSPREAD_CLIENT.open('pontoon_data')
+# END OF CREDIT------
 
 
 def main_manu():
     """
     The main menu of the game. Displays a list showing options for the user to
-    choose from: Play Game, See Rules, See High Scores.
+    choose from: Play Game, See Rules, See Leaderboard. The user can also quit.
     """
     print("Welcome! You've managed to stumble upon this terminal based")
     print("version of the classic card game Pontoon.\n")
@@ -61,11 +62,18 @@ def main_manu():
 def clear():
     """
     Clears the terminal
+     - CREDIT - this code was found on stack overflow:
+     - https://stackoverflow.com/questions/2084508/clear-terminal-in-python
     """
     os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def show_rules(bust, pontoon, five):
+    """
+    Show rules function displays the rules of the game afer clearing
+    the terminal. It has 3 parameters which represent the value
+    of certain hands of the game.
+    """
     clear()
     print("-----")
     print("RULES")
@@ -93,6 +101,10 @@ def show_rules(bust, pontoon, five):
 
 
 def show_leaderboard():
+    """
+    Show leaderboard displays the leaderboard of previous players scores
+    up to a maximum of the top 10.
+    """
     clear()
     worksheet = SHEET.worksheet("scores")
     worksheet.sort((2, 'des'))
@@ -121,7 +133,9 @@ def show_leaderboard():
 
 class PackOfCards:
     """
-    Pack of cards class
+    Pack of cards class represents a pack of 52 cards. Suits not
+    included. It can generate a random card from the pack and reset
+    its state if needed.
     """
     def __init__(self):
         self.size = 52
@@ -153,7 +167,9 @@ class PackOfCards:
 
 class Hand:
     """
-    Player's hand class
+    Hand class represents a player's hand of cards, starting with 2.
+    It can take a PackOfCards object as an arguement, though this is not
+    required as it declares its own if omitted.
     """
     def __init__(self, pack=PackOfCards()):
         self.pack = pack
@@ -208,7 +224,11 @@ class Hand:
 
 class Pontoon:
     """
-    Pontoon Class
+    Pontoon Class represents the game pontoon. It has some constant variables
+    declared for all pontoon objects which affect the game's scoring system.
+    It contains the main loops of the game and updates the user appropriately
+    at the end of each round and game. It also writes players' scores to the
+    leaderboard.
     """
     PONTOON_SCORE = 100
     FIVE_TRICK = 50
@@ -228,6 +248,10 @@ class Pontoon:
         }
 
     def play(self):
+        """
+        Play contains the main loop of the game. It loops through 5 rounds
+        unless the player quits.
+        """
         self.request_name()
         self.round_number = 0
         self.round_score = 0
@@ -278,6 +302,11 @@ class Pontoon:
                 break
 
     def end_round(self, bust, value, size):
+        """
+        End round is called at the end of each round and when all 5 rounds
+        have been completed. It takes 3 parameters which determine what
+        it outputs to the user.
+        """
         if bust:
             print(f"You've bust with a score of {value}. "
                   f"That's {self.BUST_SCORE} points...")
@@ -312,6 +341,10 @@ class Pontoon:
                   f"{self.round_number + 1}.")
 
     def request_name(self):
+        """
+        Request name askes the user for their name.
+        A maximum of 10 characters is allowed.
+        """
         while True:
             try:
                 clear()
@@ -329,6 +362,11 @@ class Pontoon:
                 input("Press 'Enter' to try again.")
 
     def update_leaderboard(self):
+        """
+        Update leaderboard uses the current state of the pontoon object
+        to update the google sheet which contains the leaderboard
+        information.
+        """
         worksheet = SHEET.worksheet("scores")
         worksheet.append_row(list(self.rounds.values()))
         worksheet.sort((2, 'des'))
@@ -337,7 +375,3 @@ class Pontoon:
 
 
 main_manu()
-# show_leaderboard()
-# pontoon = Pontoon()
-# pontoon.update_leaderboard()
-# pontoon.play()
