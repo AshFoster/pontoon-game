@@ -24,3 +24,24 @@ The following rules can also be seen within the game itself.
 - A game consists of 5 rounds with an aim of getting as many points as possible over the 5 rounds.
 
 ## User Experience
+
+The five planes of user experience were considered during the design phase of this website, which are all outlined below.
+
+### Strategy Plane
+
+Here, the user goals are considered and outlined to have a clear understanding of what thought process users of the site are likely to go through, and what they might expect from the game. 
+
+The aim is to provide ideas for potential features for the website.
+
+#### User Goals
+  - __As a user I would like:__
+      - to play a game based on chance and judgement.
+      - to easily navigate through the game with no ambiguity.
+      - to have plenty of relevant feedback.
+      - to be able to compare my results with other players.
+      - to be able to read the rules of the game.
+      - to be able to play against the computer.
+
+### Scope Plane
+
+All of the user goals outlined in the strategy plane all seem to be plausible for the first release of the game. Although for this particular game, playing against the computer would add another layer of complexity which I don't feel would provide enough of a difference to the user's experience to warrant implementing at this stage. For this reason it won't be included.
