@@ -352,7 +352,10 @@ class Pontoon:
                 clear()
                 print("You've chosen to play Pontoon!\n")
                 name = input("Please tell us your name: ")
-                if len(name) <= 10:
+                if len(name) == 0 or name.isspace():
+                    self.rounds["Name"] = "UNKNOWN"
+                    break
+                elif len(name) <= 10:
                     self.rounds["Name"] = name
                     break
                 else:
