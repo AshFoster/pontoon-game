@@ -82,7 +82,7 @@ Since this is a terminal based game there is not much to consider in terms of th
 
 - __Request Name Screen__
 
-    - This is shown when the user selects to play Pontoon. It asks the user for their name.
+    - This is shown when the user selects to play Pontoon. It asks the user for their name. A maximum of 10 characters is allowed. An error message is shown if longer than 10 characters. If nothing is typed, or only spaces typed then the name "UNKNOWN" is used.
     - Its purpose is to retrieve the user's name, which is used when adding their score to the leaderboard.
 
         ![Request Name Screen](assets/images/request-name.JPG)
@@ -96,7 +96,7 @@ Since this is a terminal based game there is not much to consider in terms of th
 
 - __End Round Screen__
 
-    - This shown at the end of each round. It also displays the player's hand and its value. Beneath this it lets the player know what their score for the round was, and let's them know that they can now continue to the next round.
+    - This shown at the end of each round. It also displays the player's hand and its value. Beneath, it lets the player know what their score for the round was, their cumlative score so far, and let's them know that they can now continue to the next round.
     - Its purpose is to update the user on how they did during the round.
 
         ![End Round Screen](assets/images/end-round.JPG)
@@ -110,7 +110,7 @@ Since this is a terminal based game there is not much to consider in terms of th
 
 - __End Game Screen__
 
-    - This shown at the end of game once 5 rounds have bee completed. Similarly to the end round screen it displays the player's final hand, its value, and their cumlative total score. Beneath this it lets the player know that their score has been added to the leaderboard, and let's them know that they can now return to the main menu.
+    - This shown at the end of the game once 5 rounds have been completed. Similarly to the end round screen it displays the player's final hand, its value, and their cumlative total score. Beneath this it lets the player know that their score has been added to the leaderboard, and let's them know that they can now return to the main menu.
     - Its purpose is to update the user on their final results for the 5 round game.
 
         ![End Game Screen](assets/images/end-game.JPG)
