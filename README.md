@@ -55,3 +55,12 @@ See Rules and See Leaderboard are self explanatory, though it's worth mentioning
 Play Pontoon takes the user to the game itself, firstly asking them for their name. This can include any characters but is limited to only 10 in length. The name is used for their score to be added to the leaderboard once a game has been completed. Next, the terminal is cleared and the main game screen is shown. The player's initial hand is shown along with its current value. The player can then choose from some options - Add another card to their hand, Stick with what the currently have, or to Quit.
 
 Once the player has either gone bust, got a five card trick, or has chosen to stick with what they have, they are notified of their score for the round and can then continue to the next round where the process is repeated. Once all 5 rounds have been completed they're shown their final score which is then added to the leaderboard. They are then returned to the main menu.
+
+During the game the player has the option of quiting. If this is selected they're asked if they'd actually like to quit. If so then they're returned to the main menu, if not they're returned to the game.
+
+### Skeleton Plane
+
+### Surface Plane
+
+Since this is a terminal based game there is not much to consider in terms of the surface plane.
+
