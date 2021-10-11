@@ -287,9 +287,9 @@ class Pontoon:
                         elif int(choice) == 2:
                             round_end = True
                         elif int(choice) == 0:
-                            quit = True
-                            print("You have quit the game, Goodbye.")
-                            break
+                            if self.quit():
+                                quit = True
+                                break
                         else:
                             raise ValueError()
                     else:
@@ -374,6 +374,28 @@ class Pontoon:
         worksheet.sort((2, 'des'))
         print("Your score has been added to the leaderboard!\n")
         input("Press 'Enter' to continue.")
+
+    def quit(self):
+        """
+        Quit function asks the useer if they're sure they'd like to quit.
+        It returns true if they would like to and false if not.
+        """
+        clear()
+        while True:
+            try:
+                print("Are you sure you'd like to quit?")
+                choice = input("Type y for yes, or n for no: ")
+
+                if choice == 'y' or choice == 'Y':
+                    clear()
+                    return True
+                elif choice == 'n' or choice == 'N':
+                    return False
+                else:
+                    raise ValueError()
+
+            except ValueError:
+                print(f"\n{choice} is not valid. Only y and n are valid.\n")
 
 
 main_manu()
