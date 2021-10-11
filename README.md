@@ -68,63 +68,63 @@ Since this is a terminal based game there is not much to consider in terms of th
 
 - __Welcome Message__
 
-- The welcome message is shown only when the game is first loaded.
-- Its purpose is to welcome the user to the game.
+    - The welcome message is shown only when the game is first loaded.
+    - Its purpose is to welcome the user to the game.
 
-    ![Welcome Message](assets/images/welcome-message.JPG)
+        ![Welcome Message](assets/images/welcome-message.JPG)
 
 - __Main Menu__
 
-- The main menu gives the user 4 options to choose from: to play Pontoon, to see the rules, to see the leaderboard, or to quit.
-- Its purpose is to act as a hub that is used to access all parts of the game. It is returned to once the user has finished with any other part of the game.
+    - The main menu gives the user 4 options to choose from: to play Pontoon, to see the rules, to see the leaderboard, or to quit.
+    - Its purpose is to act as a hub that is used to access all parts of the game. It is returned to once the user has finished with any other part of the game.
 
-    ![Main Menu](assets/images/main-menu.JPG)
+        ![Main Menu](assets/images/main-menu.JPG)
 
 - __Request Name Screen__
 
-- This is shown when the user selects to play Pontoon. It asks the user for their name.
-- Its purpose is to retrieve the user's name, which is used when adding their score to the leaderboard.
+    - This is shown when the user selects to play Pontoon. It asks the user for their name.
+    - Its purpose is to retrieve the user's name, which is used when adding their score to the leaderboard.
 
-    ![Request Name Screen](assets/images/request-name.JPG)
+        ![Request Name Screen](assets/images/request-name.JPG)
 
 - __Game Menu__
 
-- The game menu is shown during actual gameplay. It displays the players current hand and its current value. It also gives the user 3 options: to add another card to their hand, to stick with what they've got, or to quit.
-- Its purpose is to show the user what their hand is, its value, and to allow the user to choose what they'd like to do next.
+    - The game menu is shown during actual gameplay. It displays the players current hand and its current value. It also gives the user 3 options: to add another card to their hand, to stick with what they've got, or to quit.
+    - Its purpose is to show the user what their hand is, its value, and to allow the user to choose what they'd like to do next.
 
-    ![Game Menu](assets/images/game-menu.JPG)
+        ![Game Menu](assets/images/game-menu.JPG)
 
 - __End Round Screen__
 
-- This shown at the end of each round. It also displays the player's hand and its value. Beneath this it lets the player know what their score for the round was, and let's them know that they can now continue to the next round.
-- Its purpose is to update the user on how they did during the round.
+    - This shown at the end of each round. It also displays the player's hand and its value. Beneath this it lets the player know what their score for the round was, and let's them know that they can now continue to the next round.
+    - Its purpose is to update the user on how they did during the round.
 
-    ![End Round Screen](assets/images/end-round.JPG)
+        ![End Round Screen](assets/images/end-round.JPG)
 
 - __Quit Screen__
 
-- This is shown when the user selects to quit whilst in-game. It asks them if they're sure they'd like to quit.
-- Its purpose is to allow the user to have a second chance decision on quitting in case they've changed their mind, or selected quit by accident.
+    - This is shown when the user selects to quit whilst in-game. It asks them if they're sure they'd like to quit.
+    - Its purpose is to allow the user to have a second chance decision on quitting in case they've changed their mind, or selected quit by accident.
 
-    ![Quit Screen](assets/images/quit.JPG)
+        ![Quit Screen](assets/images/quit.JPG)
 
 - __End Game Screen__
 
-- This shown at the end of game once 5 rounds have bee completed. Similarly to the end round screen it displays the player's final hand, its value, and their cumlative total score. Beneath this it lets the player know that their score has been added to the leaderboard, and let's them know that they can now return to the main menu.
-- Its purpose is to update the user on their final results for the 5 round game.
+    - This shown at the end of game once 5 rounds have bee completed. Similarly to the end round screen it displays the player's final hand, its value, and their cumlative total score. Beneath this it lets the player know that their score has been added to the leaderboard, and let's them know that they can now return to the main menu.
+    - Its purpose is to update the user on their final results for the 5 round game.
 
-    ![End Game Screen](assets/images/end-game.JPG)
+        ![End Game Screen](assets/images/end-game.JPG)
 
 - __Rules Screen__
 
-- The rules screen simply shows the user the rules of the game. The main menu can easily be returned to from here.
-- Its purpose is to allow the user to read the rules of the game.
+    - The rules screen simply shows the user the rules of the game. The main menu can easily be returned to from here.
+    - Its purpose is to allow the user to read the rules of the game.
 
-    ![Rules Screen](assets/images/rules.JPG)
+        ![Rules Screen](assets/images/rules.JPG)
 
 - __Leaderboard Screen__
 
-- The leaderboard screen shows the user the top scores - up to a maximum of 10 - of the games played so far. The main menu can easily be returned to from here.
-- Its purpose is to allow the user to see what scores previous players have achieved, or to see if they have made it into the top 10.
+    - The leaderboard screen shows the user the top scores - up to a maximum of 10 - of the games played so far. The main menu can easily be returned to from here.
+    - Its purpose is to allow the user to see what scores previous players have achieved, or to see if they have made it into the top 10.
 
-    ![Leaderboard Screen](assets/images/leaderboard.JPG)
+        ![Leaderboard Screen](assets/images/leaderboard.JPG)
