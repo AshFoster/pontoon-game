@@ -66,6 +66,8 @@ Since this is a terminal based game there is not much to consider in terms of th
 
 ## Features
 
+### Existing Features
+
 - __Welcome Message__
 
     - The welcome message is shown only when the game is first loaded.
@@ -128,3 +130,19 @@ Since this is a terminal based game there is not much to consider in terms of th
     - Its purpose is to allow the user to see what scores previous players have achieved, or to see if they have made it into the top 10.
 
         ![Leaderboard Screen](assets/images/leaderboard.JPG)
+
+### Future Features
+
+- Allow the player to play against the computer, in the style of blackjack.
+
+## Data Model
+
+I decided to implement 3 different classes for this project: a Pack of Cards class, a Hand class, and a Pontoon class. 
+
+The Pack of Cards class represents a pack of 52 cards and has a method to return a random card from the pack. This method simulates removing that card from the pack so when the next card is drawn any previously drawn cards cannot be drawn again. There is also a method to reset the pack to its default settings. Although this method has not been used within this project, I thought it made sense to add it to the class.
+
+The Hand class represents a players hand. It has an optional paramter of a Pack of Cards object. If omitted it creates its own Pack of Cards object. The reason I added the optional parameter was for future maintainability, for example, 2 Hand objects drawing from the same Pack of Cards object. Though this wasn't actually needed for the project in its current state.
+
+The Hand class has methods to show which cards are in the hand, to add to the hand, to return the value of the hand, and to return the size of the hand (how many cards).
+
+The Pontoon class 
