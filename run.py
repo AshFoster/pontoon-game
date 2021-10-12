@@ -55,7 +55,7 @@ def main_manu():
 
         except ValueError:
             print(f"{menu_choice} is not valid, please try again.")
-            input("Press 'Enter' to return to the game.")
+            input("Press 'Enter' to return to the game.\n")
             clear()
 
 
@@ -96,7 +96,7 @@ def show_rules(bust, pontoon, five):
     print(f"  a five card trick, worth {five} points!")
     print("- A game consists of 5 rounds with an aim of getting as many")
     print("  points as possible over the 5 rounds.")
-    input("\nPress 'Enter' to return to the Main Menu.")
+    input("\nPress 'Enter' to return to the Main Menu.\n")
     clear()
 
 
@@ -129,7 +129,7 @@ def show_leaderboard():
     for ind in range(1, leaderboard_size + 1):
         print(f"{str(ind)+'.':<6}{scores[0][ind]:<12}{scores[1][ind]:>4}")
 
-    input("\nPress 'Enter' to return to the Main Menu.")
+    input("\nPress 'Enter' to return to the Main Menu.\n")
     clear()
 
 
@@ -262,7 +262,7 @@ class Pontoon:
             hand = Hand()
             round_end = False
             bust = False
-            quit = False
+            quit_game = False
             while True:
                 try:
                     clear()
@@ -275,7 +275,7 @@ class Pontoon:
                         print("Stick:           2\n")
                         print("Quit:            0\n")
                         choice = input("Please enter your choice using the "
-                                       "numbers shown: ")
+                                       "numbers shown: \n")
 
                         if int(choice) == 1:
                             hand.add_card()
@@ -288,7 +288,7 @@ class Pontoon:
                             round_end = True
                         elif int(choice) == 0:
                             if self.quit():
-                                quit = True
+                                quit_game = True
                                 break
                         else:
                             raise ValueError()
@@ -298,9 +298,9 @@ class Pontoon:
 
                 except ValueError:
                     print(f"{choice} is not valid, please try again.")
-                    input("Press 'Enter' to return to the game.")
+                    input("Press 'Enter' to return to the game.\n")
 
-            if quit:
+            if quit_game:
                 break
 
     def end_round(self, bust, value, size):
@@ -340,7 +340,7 @@ class Pontoon:
             print(f"\nAt the end of round {self.round_number}"
                   f" your total score is {self.round_score}.\n")
             input(f"Press 'Enter' to continue to round "
-                  f"{self.round_number + 1}.")
+                  f"{self.round_number + 1}.\n")
 
     def request_name(self):
         """
@@ -351,7 +351,7 @@ class Pontoon:
             try:
                 clear()
                 print("You've chosen to play Pontoon!\n")
-                name = input("Please tell us your name: ")
+                name = input("Please tell us your name: \n")
                 if len(name) == 0 or name.isspace():
                     self.rounds["Name"] = "UNKNOWN"
                     break
@@ -364,7 +364,7 @@ class Pontoon:
             except ValueError:
                 print("That has too many characters!")
                 print("A maximum of 10 characters is allowed.")
-                input("Press 'Enter' to try again.")
+                input("Press 'Enter' to try again.\n")
 
     def update_leaderboard(self):
         """
@@ -376,7 +376,7 @@ class Pontoon:
         worksheet.append_row(list(self.rounds.values()))
         worksheet.sort((2, 'des'))
         print("Your score has been added to the leaderboard!\n")
-        input("Press 'Enter' to continue.")
+        input("Press 'Enter' to continue.\n")
 
     def quit(self):
         """
@@ -387,7 +387,7 @@ class Pontoon:
         while True:
             try:
                 print("Are you sure you'd like to quit?")
-                choice = input("Type y for yes, or n for no: ")
+                choice = input("Type y for yes, or n for no: \n")
 
                 if choice == 'y' or choice == 'Y':
                     clear()
