@@ -145,4 +145,4 @@ The Hand class represents a players hand. It has an optional paramter of a Pack 
 
 The Hand class has methods to show which cards are in the hand, to add to the hand, to return the value of the hand, and to return the size of the hand (how many cards).
 
-The Pontoon class 
+The Pontoon Class represents the game itself. It has some constant variables declared for all pontoon objects which affect the game's scoring system. It has multiple other variables including a Hand object to represent the player's hand. Its main method is called play which runs the game's main loop. At the end of each round the end game function is called, displaying various different messages depending on the outcome. Once all 5 rounds have been completed the update leaderboard function is called which does just that. The class also has a quit function which is called when the player chooses to quit, and a request name function which is called before the first loop of the game.
