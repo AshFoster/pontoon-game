@@ -146,3 +146,29 @@ The Hand class represents a players hand. It has an optional paramter of a Pack 
 The Hand class has methods to show which cards are in the hand, to add to the hand, to return the value of the hand, and to return the size of the hand (how many cards).
 
 The Pontoon Class represents the game itself. It has some constant variables declared for all pontoon objects which affect the game's scoring system. It has multiple other variables including a Hand object to represent the player's hand. Its main method is called play which runs the game's main loop. At the end of each round the end game function is called, displaying various different messages depending on the outcome. Once all 5 rounds have been completed the update leaderboard function is called which does just that. The class also has a quit function which is called when the player chooses to quit, and a request name function which is called before the first loop of the game.
+
+## Testing
+
+Throughout the development of this project I have tested it to make sure each part of it acts as I expect it to. Where user input is required I've tested for many invalid entires to make sure that the user is made aware of their error, and that they have the option to try again. I've made sure that the program logic flows correctly by playing through the game many times, sometimes amending the code so that specific outcomes occured so I could make sure everything acted as expected. When necessary, I used print statements to check variable values.
+
+Most of the testing was done in the local terminal, but I've also tested it in the Code Institute's Heroku terminal after deployment.
+
+### Validator Testing
+
+I passed the code through a [PEP8 linter](http://pep8online.com/) which said that my code was "All right".
+
+### Bugs
+
+#### Fixed Bugs
+
+- When I added the constant variables to the Pontoon class I noticed that when the player's score was being added up it was using +100 points for going bust instead of -100 points. I hadn't changed the formula to account for the negative value of the constant variable so I was subtracting twice. This was easily fixed by amending the minus sign to a plus sign.
+
+- When I first created the game loop I noticed that I could keep adding cards to my hand until I went bust even though a maximum of only 5 cards is supposed to be allowed. I fixed this by adding an elif statement which checks if the hand size is 5 when adding another card, and if so changing the end round variable to true so that the loop ends on the next try.
+
+- When I initially added the leaderboard page I noticed that it was taking a while to load during which time the display was blank. I thought the player might misinterpret this to mean that it had crashed so I decided to put a loading message onto the screen during this time.
+
+- I noticed that when the player got a Pontoon they still had the option to add another card. I decided that it would be better if the round finished automatically in this case. To solve this I added an if statement that checks the player's hand to see if they've got Pontoon, and if so, change the end round variable to true so that the round ends.
+
+#### Unfixed Bugs
+
+- No bugs remaining.
