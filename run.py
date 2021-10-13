@@ -269,6 +269,9 @@ class Pontoon:
                     print(f"Round {self.round_number} of 5\n")
                     print(f"Your hand is:{hand.show_hand()}\n")
 
+                    if hand.get_value() == 21 and hand.get_size() == 2:
+                        round_end = True
+
                     if not round_end:
                         print(f"Current value: {hand.get_value()}\n")
                         print("Another card:    1")
