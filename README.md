@@ -6,6 +6,24 @@
 
 ## Contents
 
+- [Overview](#overview)
+- [Game Rules](#game-rules)
+- [User Experience (UX)](#user-experience)
+    - [Strategy Plane](#strategy-plane)
+    - [Scope Plane](#scope-plane)
+    - [Structure Plane](#structure-plane)
+    - [Skeleton Plane](#skeleton-plane)
+    - [Surface Plane](#surface-plane)
+- [Features](#features)
+    - [Existing Features](#existing-features)
+    - [Future Features](#future-features)
+- [Data Model](#data-model)
+- [Testing](#testing)
+    - [Validator Testing](#validator-testing)
+    - [Bugs](#bugs)
+- [Deployment](#deployment)
+- [Credits](#credits)
+
 ## Overview
 
 This is Python terminal game based on the classic card game Pontoon, which runs in the Code Institute's mock terminal on Heroku. It is simple, easy to use, and is fun. Success is based on chance and judgement, and the player's final score is added to a leaderboard to add a further competative element.
