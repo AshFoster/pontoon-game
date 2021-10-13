@@ -211,6 +211,8 @@ The steps I followed for deployment were:
 - Connect the Heroku app to the GitHub repository.
 - Click on Deploy and wait for confirmation of deployment.
 
+[Here's a link to the live site.](https://pontoon-game.herokuapp.com) 
+
 ## Credits
 
 - [Code Institute's Full Stack Developer Course](https://codeinstitute.net/)
