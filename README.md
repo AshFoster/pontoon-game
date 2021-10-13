@@ -192,3 +192,12 @@ The steps I followed for deployment were:
 - Now go to the Deploy tab.
 - Connect the Heroku app to the GitHub repository.
 - Click on Deploy and wait for confirmation fo deployment.
+
+## Credits
+
+- [Code Institute's Full Stack Developer Course](https://codeinstitute.net/)
+    - Course material and the Love Sandwiches walkthrough projects provided some ideas.
+    - Their deployment terminal.
+
+- [Stack Overflow](https://stackoverflow.com/questions/2084508/clear-terminal-in-python)
+    - For the code to clear the terminal.
