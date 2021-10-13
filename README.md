@@ -177,3 +177,18 @@ I passed the code through a [PEP8 linter](http://pep8online.com/) which said tha
 
 - No bugs remaining.
 
+## Deployment
+
+This project was deployed using Code Institute's mock terminal for Heroku.
+
+The steps I followed for deployment were:
+
+- Make sure the most up to date code has been pushed to the GitHub repository.
+- Login into Heroku and create a new Heroku app.
+- Once created go to the settings tab.
+- Add a Config Var with the key CREDS, then copy and paste the contents of the creds.json file (found within the GitHub repository) as the value.
+- Add another Config Var with a key of PORT and a value of 8000.
+- Now add Buildpacks for Python and NodeJS in that order. The order is important.
+- Now go to the Deploy tab.
+- Connect the Heroku app to the GitHub repository.
+- Click on Deploy and wait for confirmation fo deployment.
