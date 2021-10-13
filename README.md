@@ -26,7 +26,7 @@
 
 ## Overview
 
-This is Python terminal game based on the classic card game Pontoon, which runs in the Code Institute's mock terminal on Heroku. It is simple, easy to use, and is fun. Success is based on chance and judgement, and the player's final score is added to a leaderboard to add a further competative element.
+This is Python terminal game based on the classic card game Pontoon, which runs in the Code Institute's mock terminal on Heroku. It is simple, easy to use, and is fun. Success is based on chance and judgement, and the player's final score is added to a leaderboard to add a further competitive element.
 
 ## Game Rules
 
@@ -38,11 +38,11 @@ The following rules can also be seen within the game itself.
 - Cards numbered 2 to 10 hold that specific value.
 - Aces can have a value of 1 or 11. The optimum value used.
 - Jack, Queen and King cards all have a value of 10.
-- The player can request more cards, one-at-a-time, up to a total of 5.
+- The player can request more cards, one at a time, up to a total of 5.
 - The aim is to get as close as possible to a score of 21 without going higher.
 - The hand is considered bust if higher than 21 which results in a round score of -50 points.
 - If a score of 21 is achieved with the first 2 cards that's a Pontoon, worth 100 points!
-- If 5 cards are held with a total value of 21 or less that's a five card trick, worth 50 points!
+- If 5 cards are held with a total value of 21 or less that's a five-card trick, worth 50 points!
 - A game consists of 5 rounds with an aim of getting as many points as possible over the 5 rounds.
 
 ## User Experience
@@ -66,25 +66,25 @@ The aim is to provide ideas for potential features for the website.
 
 ### Scope Plane
 
-All of the user goals outlined in the strategy plane all seem to be plausible for the first release of the game. Although for this particular game, playing against the computer would add another layer of complexity which I don't feel would provide enough of a difference to the user's experience to warrant implementing at this stage. For this reason it won't be included.
+All of the user goals outlined in the strategy plane all seem to be plausible for the first release of the game. Although for this particular game, playing against the computer would add another layer of complexity which I don't feel would provide enough of a difference to the user's experience to warrant implementing at this stage. For this reason, it won't be included.
 
 ### Structure Plane
 
-The game will have a welcome message shown only when the game is first loaded. From then on, a main menu is shown with various options for the user to choose from - Play Pontoon, See Rules, See Leaderboard and Quit. They will be notified if they don't select a valid option and asked to try again.
+The game will have a welcome message shown only when the game is first loaded. From then on, the main menu is shown with various options for the user to choose from - Play Pontoon, See Rules, See Leaderboard and Quit. They will be notified if they don't select a valid option and asked to try again.
 
-See Rules and See Leaderboard are self explanatory, though it's worth mentioning that the terminal is cleared before either are shown, and then cleared again on returning to the main menu.
+See Rules and See Leaderboard are self-explanatory, though it's worth mentioning that the terminal is cleared before either are shown and then cleared again on returning to the main menu.
 
-Play Pontoon takes the user to the game itself, firstly asking them for their name. This can include any characters but is limited to only 10 in length. The name is used for their score to be added to the leaderboard once a game has been completed. Next, the terminal is cleared and the main game screen is shown. The player's initial hand is shown along with its current value. The player can then choose from some options - Add another card to their hand, Stick with what the currently have, or to Quit.
+Play Pontoon takes the user to the game itself, firstly asking them for their name. This can include any characters but is limited to only 10 in length. The name is used for their score to be added to the leaderboard once a game has been completed. Next, the terminal is cleared and the main game screen is shown. The player's initial hand is shown along with its current value. The player can then choose from some options - Add another card to their hand, Stick with what they currently have, or to Quit.
 
-Once the player has either gone bust, got a five card trick, or has chosen to stick with what they have, they are notified of their score for the round and can then continue to the next round where the process is repeated. Once all 5 rounds have been completed they're shown their final score which is then added to the leaderboard. They are then returned to the main menu.
+Once the player has either gone bust, got a five-card trick, or has chosen to stick with what they have, they are notified of their score for the round and can then continue to the next round where the process is repeated. Once all 5 rounds have been completed they're shown their final score which is then added to the leaderboard. They are then returned to the main menu.
 
-During the game the player has the option of quiting. If this is selected they're asked if they'd actually like to quit. If so then they're returned to the main menu, if not they're returned to the game.
+During the game, the player has the option of quitting. If this is selected they're asked if they'd actually like to quit. If so then they're returned to the main menu, if not they're returned to the game.
 
 ### Skeleton Plane
 
 ### Surface Plane
 
-Since this is a terminal based game there is not much to consider in terms of the surface plane.
+Since this is a terminal-based game there is not much to consider in terms of the surface plane.
 
 ## Features
 
@@ -113,14 +113,14 @@ Since this is a terminal based game there is not much to consider in terms of th
 
 - __Game Menu__
 
-    - The game menu is shown during actual gameplay. It displays the players current hand and its current value. It also gives the user 3 options: to add another card to their hand, to stick with what they've got, or to quit.
+    - The game menu is shown during actual gameplay. It displays the player's current hand and its current value. It also gives the user 3 options: to add another card to their hand, to stick with what they've got, or to quit.
     - Its purpose is to show the user what their hand is, its value, and to allow the user to choose what they'd like to do next.
 
         ![Game Menu](assets/images/game-menu.JPG)
 
 - __End Round Screen__
 
-    - This shown at the end of each round. It also displays the player's hand and its value. Beneath, it lets the player know what their score for the round was, their cumlative score so far, and let's them know that they can now continue to the next round.
+    - This is shown at the end of each round. It also displays the player's hand and its value. Beneath, it lets the player know what their score for the round was, their cumulative score so far, and lets them know that they can now continue to the next round.
     - Its purpose is to update the user on how they did during the round.
 
         ![End Round Screen](assets/images/end-round.JPG)
@@ -134,7 +134,7 @@ Since this is a terminal based game there is not much to consider in terms of th
 
 - __End Game Screen__
 
-    - This shown at the end of the game once 5 rounds have been completed. Similarly to the end round screen it displays the player's final hand, its value, and their cumlative total score. Beneath this it lets the player know that their score has been added to the leaderboard, and let's them know that they can now return to the main menu.
+    - This is shown at the end of the game once 5 rounds have been completed. Similarly to the end round screen, it displays the player's final hand, its value, and their cumulative total score. Beneath this it lets the player know that their score has been added to the leaderboard, and lets them know that they can now return to the main menu.
     - Its purpose is to update the user on their final results for the 5 round game.
 
         ![End Game Screen](assets/images/end-game.JPG)
@@ -163,15 +163,15 @@ I decided to implement 3 different classes for this project: a Pack of Cards cla
 
 The Pack of Cards class represents a pack of 52 cards and has a method to return a random card from the pack. This method simulates removing that card from the pack so when the next card is drawn any previously drawn cards cannot be drawn again. There is also a method to reset the pack to its default settings. Although this method has not been used within this project, I thought it made sense to add it to the class.
 
-The Hand class represents a players hand. It has an optional paramter of a Pack of Cards object. If omitted it creates its own Pack of Cards object. The reason I added the optional parameter was for future maintainability, for example, 2 Hand objects drawing from the same Pack of Cards object. Though this wasn't actually needed for the project in its current state.
+The Hand class represents a players hand. It has an optional parameter of a Pack of Cards object. If omitted it creates its own Pack of Cards object. The reason I added the optional parameter was for future maintainability, for example, 2 Hand objects drawing from the same Pack of Cards object. Though this wasn't actually needed for the project in its current state.
 
 The Hand class has methods to show which cards are in the hand, to add to the hand, to return the value of the hand, and to return the size of the hand (how many cards).
 
-The Pontoon Class represents the game itself. It has some constant variables declared for all pontoon objects which affect the game's scoring system. It has multiple other variables including a Hand object to represent the player's hand. Its main method is called play which runs the game's main loop. At the end of each round the end game function is called, displaying various different messages depending on the outcome. Once all 5 rounds have been completed the update leaderboard function is called which does just that. The class also has a quit function which is called when the player chooses to quit, and a request name function which is called before the first loop of the game.
+The Pontoon Class represents the game itself. It has some constant variables declared for all pontoon objects which affect the game's scoring system. It has multiple other variables including a Hand object to represent the player's hand. Its main method is called play which runs the game's main loop. At the end of each round, the end game function is called, displaying various different messages depending on the outcome. Once all 5 rounds have been completed the update leaderboard function is called which does just that. The class also has a quit function which is called when the player chooses to quit, and a request name function which is called before the first loop of the game.
 
 ## Testing
 
-Throughout the development of this project I have tested it to make sure each part of it acts as I expect it to. Where user input is required I've tested for many invalid entires to make sure that the user is made aware of their error, and that they have the option to try again. I've made sure that the program logic flows correctly by playing through the game many times, sometimes amending the code so that specific outcomes occured so I could make sure everything acted as expected. When necessary, I used print statements to check variable values.
+Throughout the development of this project, I have tested it to make sure each part of it acts as I expect it to. Where user input is required I've tested for many invalid entries to make sure that the user is made aware of their error, and that they have the option to try again. I've made sure that the program logic flows correctly by playing through the game many times, sometimes amending the code so that specific outcomes occurred so I could make sure everything acted as expected. When necessary, I used print statements to check variable values.
 
 Most of the testing was done in the local terminal, but I've also tested it in the Code Institute's Heroku terminal after deployment.
 
@@ -185,7 +185,7 @@ I passed the code through a [PEP8 linter](http://pep8online.com/) which said tha
 
 - When I added the constant variables to the Pontoon class I noticed that when the player's score was being added up it was using +100 points for going bust instead of -100 points. I hadn't changed the formula to account for the negative value of the constant variable so I was subtracting twice. This was easily fixed by amending the minus sign to a plus sign.
 
-- When I first created the game loop I noticed that I could keep adding cards to my hand until I went bust even though a maximum of only 5 cards is supposed to be allowed. I fixed this by adding an elif statement which checks if the hand size is 5 when adding another card, and if so changing the end round variable to true so that the loop ends on the next try.
+- When I first created the game loop I noticed that I could keep adding cards to my hand until I went bust even though a maximum of only 5 cards is supposed to be allowed. I fixed this by adding an elif statement that checks if the hand size is 5 when adding another card, and if so changing the end round variable to true so that the loop ends on the next try.
 
 - When I initially added the leaderboard page I noticed that it was taking a while to load during which time the display was blank. I thought the player might misinterpret this to mean that it had crashed so I decided to put a loading message onto the screen during this time.
 
@@ -209,7 +209,7 @@ The steps I followed for deployment were:
 - Now add Buildpacks for Python and NodeJS in that order. The order is important.
 - Now go to the Deploy tab.
 - Connect the Heroku app to the GitHub repository.
-- Click on Deploy and wait for confirmation fo deployment.
+- Click on Deploy and wait for confirmation of deployment.
 
 ## Credits
 
