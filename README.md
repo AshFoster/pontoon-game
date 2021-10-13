@@ -1,5 +1,9 @@
 # Pontoon Game
 
+[Click here to view the live site.](https://pontoon-game.herokuapp.com)
+
+![Am I Responsive Image](assets/images/am-i-responsive.JPG)
+
 ## Contents
 
 ## Overview
@@ -172,3 +176,4 @@ I passed the code through a [PEP8 linter](http://pep8online.com/) which said tha
 #### Unfixed Bugs
 
 - No bugs remaining.
+
