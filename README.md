@@ -82,6 +82,10 @@ During the game, the player has the option of quitting. If this is selected they
 
 ### Skeleton Plane
 
+I created a flowchart to help decide on the flow of the program and the order in which things are intended to happen. This can be seen in the image below. Further details of certain sections shown in this image can be seen in the [Features](#features) section below.
+
+![Flowchart](assets/images/flowchart.JPG)
+
 ### Surface Plane
 
 Since this is a terminal-based game there is not much to consider in terms of the surface plane.
@@ -111,12 +115,12 @@ Since this is a terminal-based game there is not much to consider in terms of th
 
         ![Request Name Screen](assets/images/request-name.JPG)
 
-- __Game Menu__
+- __Game Screen__
 
-    - The game menu is shown during actual gameplay. It displays the player's current hand and its current value. It also gives the user 3 options: to add another card to their hand, to stick with what they've got, or to quit.
+    - The game screen is shown during actual gameplay. It displays the player's current hand and its current value. It also gives the user 3 options: to add another card to their hand, to stick with what they've got, or to quit.
     - Its purpose is to show the user what their hand is, its value, and to allow the user to choose what they'd like to do next.
 
-        ![Game Menu](assets/images/game-menu.JPG)
+        ![Game Screen](assets/images/game-screen.JPG)
 
 - __End Round Screen__
 
