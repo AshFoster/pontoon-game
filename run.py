@@ -112,9 +112,14 @@ def show_leaderboard():
 
     scores = []
     leaderboard_size = 0
+    # CREDIT-------------
+    # The idea for this 'for loop' was influenced by something
+    # similar in the Code Institute's Love Sandwiches walkthrough
+    # project.
     for ind in range(1, 3):
         column = worksheet.col_values(ind)
         scores.append(column)
+    # END OF CREDIT------
 
     if len(scores[0]) < 10:
         leaderboard_size = len(scores[0])
