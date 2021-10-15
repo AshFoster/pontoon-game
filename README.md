@@ -103,7 +103,7 @@ Since this is a terminal-based game there is not much to consider in terms of th
 
 - __Main Menu__
 
-    - The main menu gives the user 4 options to choose from: to play Pontoon, to see the rules, to see the leaderboard, or to quit.
+    - The main menu gives the user 4 options to choose from: to play Pontoon, to see the rules, to see the leaderboard, or to quit. If the user enters something other than these options a validation error is raised and they are told that their input is invalid and to try again.
     - Its purpose is to act as a hub that is used to access all parts of the game. It is returned to once the user has finished with any other part of the game.
 
         ![Main Menu](assets/images/main-menu.JPG)
@@ -117,7 +117,7 @@ Since this is a terminal-based game there is not much to consider in terms of th
 
 - __Game Screen__
 
-    - The game screen is shown during actual gameplay. It displays the player's current hand and its current value. It also gives the user 3 options: to add another card to their hand, to stick with what they've got, or to quit.
+    - The game screen is shown during actual gameplay. It displays the player's current hand and its current value. It also gives the user 3 options: to add another card to their hand, to stick with what they've got, or to quit. If the user enters something other than these options a validation error is raised and they are told that their input is invalid and to try again.
     - Its purpose is to show the user what their hand is, its value, and to allow the user to choose what they'd like to do next.
 
         ![Game Screen](assets/images/game-screen.JPG)
@@ -131,7 +131,7 @@ Since this is a terminal-based game there is not much to consider in terms of th
 
 - __Quit Screen__
 
-    - This is shown when the user selects to quit whilst in-game. It asks them if they're sure they'd like to quit.
+    - This is shown when the user selects to quit whilst in-game. It asks them if they're sure they'd like to quit with the options y/n. If the user enters something else then a validation error is raised and they are told that their input is invalid and to try again.
     - Its purpose is to allow the user to have a second chance decision on quitting in case they've changed their mind, or selected quit by accident.
 
         ![Quit Screen](assets/images/quit.JPG)
@@ -175,13 +175,19 @@ The Pontoon Class represents the game itself. It has some constant variables dec
 
 ## Testing
 
-Throughout the development of this project, I have tested it to make sure each part of it acts as I expect it to. Where user input is required I've tested for many invalid entries to make sure that the user is made aware of their error, and that they have the option to try again. I've made sure that the program logic flows correctly by playing through the game many times, sometimes amending the code so that specific outcomes occurred so I could make sure everything acted as expected. When necessary, I used print statements to check variable values.
+Throughout the development of this project, I have tested it to make sure each part of it acts as I expect it to. 
+
+Where user input is required I've tested for many invalid entries to make sure that the user is made aware of their error, and that they have the option to try again. Each area where user input validation occurs is described in more detail in the [Features](#features) section above. Those being Main Menu, Request Name Screen, Game Screen, Quit Screen. All validation errors are handled as expected.
+
+I've made sure that the program logic flows correctly by playing through the game many times, sometimes amending the code so that specific outcomes occurred so I could make sure everything acted as expected. When necessary, I used print statements to check variable values.
 
 Most of the testing was done in the local terminal, but I've also tested it in the Code Institute's Heroku terminal after deployment.
 
 ### Validator Testing
 
-I passed the code through a [PEP8 linter](http://pep8online.com/) which said that my code was "All right".
+I passed the code through a [PEP8 linter](http://pep8online.com/) which said that my code was "All right". See image below.
+
+![PEP8 Image](assets/images/pep8.JPG)
 
 ### Bugs
 
