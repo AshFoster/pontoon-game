@@ -24,8 +24,6 @@ def main_manu():
     The main menu of the game. Displays a list showing options for the user to
     choose from: Play Game, See Rules, See Leaderboard. The user can also quit.
     """
-    print("Welcome! You've managed to stumble upon this terminal based")
-    print("version of the classic card game Pontoon.\n")
     pontoon = Pontoon()
 
     while True:
@@ -409,4 +407,14 @@ class Pontoon:
                 print(f"\n{choice} is not valid. Only y and n are valid.\n")
 
 
-main_manu()
+def main():
+    """
+    Prints welcome message and then runs the main menu function
+    """
+    print("Welcome! You've managed to stumble upon this terminal based")
+    print("version of the classic card game Pontoon.\n")
+
+    main_manu()
+
+
+main()
