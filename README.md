@@ -194,7 +194,7 @@ I made use of 4 Python libraries for this project. The reasons for each are expl
 
 Throughout the development of this project, I have tested it to make sure each part of it acts as I expect it to. 
 
-Where user input is required I've tested for many invalid entries to make sure that the user is made aware of their error, and that they have the option to try again. Each area where user input validation occurs is described in more detail in the [Features](#features) section above. Those being Main Menu, Request Name Screen, Game Screen, Quit Screen. All validation errors are handled as expected.
+Where user input is required I've tested for many invalid entries to make sure that the user is made aware of their error, and that they have the option to try again. Each area where user input validation occurs is described in more detail in the [Features](#features) section above. Those being Main Menu, Request Name Screen, Game Screen and Quit Screen. All validation errors are handled as expected.
 
 I've made sure that the program logic flows correctly by playing through the game many times, sometimes amending the code so that specific outcomes occurred so I could make sure everything acted as expected. When necessary, I used print statements to check variable values.
 
