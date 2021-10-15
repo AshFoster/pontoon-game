@@ -18,6 +18,7 @@
     - [Existing Features](#existing-features)
     - [Future Features](#future-features)
 - [Data Model](#data-model)
+- [Python Libraries](#python-libraries)
 - [Testing](#testing)
     - [Validator Testing](#validator-testing)
     - [Bugs](#bugs)
