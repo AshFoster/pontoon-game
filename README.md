@@ -173,6 +173,22 @@ The Hand class has methods to show which cards are in the hand, to add to the ha
 
 The Pontoon Class represents the game itself. It has some constant variables declared for all pontoon objects which affect the game's scoring system. It has multiple other variables including a Hand object to represent the player's hand. Its main method is called play which runs the game's main loop. At the end of each round, the end game function is called, displaying various different messages depending on the outcome. Once all 5 rounds have been completed the update leaderboard function is called which does just that. The class also has a quit function which is called when the player chooses to quit, and a request name function which is called before the first loop of the game.
 
+## Python Libraries
+
+I made use of 4 Python libraries for this project. The reasons for each are explained below.
+
+- __google-auth__
+    - To set up authentication required to access the Google cloud project containing the leaderboard spreadsheet.
+
+- __gspread__
+    - To access and update the leaderboard spreadsheet.
+
+- __os__
+    - To be able to use the code required to clear the terminal.
+
+- __random__
+    - To have access to a random number generator.
+
 ## Testing
 
 Throughout the development of this project, I have tested it to make sure each part of it acts as I expect it to. 
