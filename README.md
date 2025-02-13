@@ -1,6 +1,6 @@
 # Pontoon Game
 
-[Click here to view the live site.](https://pontoon-game.herokuapp.com)
+[Click here to view the live site.](https://pontoon-game.onrender.com)
 
 ![Am I Responsive Image](assets/images/am-i-responsive.JPG)
 
